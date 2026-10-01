@@ -1,0 +1,25 @@
+.mouse-image-trail {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.mouse-image-trail img {
+  position: absolute;
+  display: block;
+  margin: 0;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+  border-radius: 0px;
+  border: 0;
+  box-shadow: 0 12px 35px rgb(0 0 0 / 16%);
+  animation: trail-appear 220ms ease-out both;
+}
+@keyframes trail-appear {
+  from { opacity: 0; transform: scale(0.94); }
+  to { opacity: 1; transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mouse-image-trail img { animation: none; }
+}
